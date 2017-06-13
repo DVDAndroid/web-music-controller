@@ -1,0 +1,28 @@
+<!--
+  ~ Copyright 2017 dvdandroid
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:width="24dp"
+        android:height="24dp"
+        android:viewportHeight="125.0"
+        android:viewportWidth="125.0">
+    <path
+        android:fillColor="#212121"
+        android:pathData="M21.92,45C23.94,42.3 25.97,39.6 28,36.9C30.03,39.6 32.06,42.3 34.08,45C32.72,45 31.36,45 30,45C30,50.34 30,55.67 30,61C32,60.99 34,60.99 36,61C36,59.68 36,58.35 36,57.03C35.5,57.01 34.5,56.99 34,56.97C34,54.31 34,51.66 34,49C36.67,49 39.33,49 42,49C42,51.66 42,54.31 42,56.97C41.51,56.99 40.52,57.01 40.03,57.02C39.92,59.63 40.72,63.3 37.78,64.66C35.25,65.33 32.58,64.94 29.99,64.99C29.99,66.89 30.01,68.8 30.05,70.7C31.62,72.3 33.48,74.6 32.03,76.91C30.7,80.29 25.34,80.31 23.98,76.95C22.52,74.63 24.35,72.3 25.95,70.7C25.99,68.8 26,66.89 26.01,64.99C23.42,64.94 20.76,65.32 18.23,64.67C15.33,63.35 16.08,59.76 15.92,57.2C14.34,55.62 12.53,53.35 13.97,51.06C15.33,47.69 20.7,47.7 22.03,51.09C23.48,53.37 21.63,55.64 20.06,57.21C20.03,58.47 20,59.74 19.98,61C21.99,61 23.99,61 26,61C26,55.67 26,50.34 26,45C24.64,45 23.28,45 21.92,45Z"/>
+    <path
+        android:fillColor="#fff"
+        android:pathData="M71.59,48.91C78.07,44.15 85.91,41.1 94.01,40.97C102.77,40.63 111.4,43.75 118.4,48.91C110.64,58.67 102.8,68.37 95,78.1C87.19,68.37 79.36,58.67 71.59,48.91Z"/>
+</vector>

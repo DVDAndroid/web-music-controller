@@ -1,0 +1,106 @@
+body {
+    background-color: #FF7043;
+    overflow: hidden;
+}
+
+#container {
+    display: none;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    text-align: center;
+}
+
+#intro_container {
+    display: block;
+}
+
+#intro_container, #error_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -250px;
+}
+
+#error_container {
+    display: none;
+}
+
+#error_container > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url("./../res/alert-circle.png") no-repeat center;
+}
+
+#intro_container > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: url("./../res/music-circle.png") no-repeat center;
+}
+
+#albumart, #info {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#albumart {
+    width: 40%;
+    height: 40%;
+}
+
+@media screen and (max-height: 638px) {
+    #albumart {
+        width: 35%;
+        height: 35%;
+    }
+
+    #album-artist {
+        line-height: 12px;
+    }
+}
+
+#info {
+    display: inline-block !important;
+}
+
+.controls {
+    padding-top: 1%;
+}
+
+.big-material-icons {
+    font-size: 4em !important;
+    padding-left: 2% !important;
+    padding-right: 2% !important;
+}
+
+.mdl-button {
+    height: auto !important;
+}
+
+#volume_slider_container {
+    width: 30%;
+    float: right;
+    margin-right: 30%;
+    padding-top: 13px;
+}
+
+#volume_button_container {
+    float: left;
+    margin-left: 30%;
+}
+
+#options_menu {
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    background-color: white;
+    display: none;
+}
+
+.mdl-list__item {
+    padding: unset;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--
+  ~ Copyright 2017 dvdandroid
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<html>
+<head>
+    <title>Web Music Controller</title>
+    <link rel="shortcut icon" href="./res/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./res/favicon.ico" type="image/x-icon">
+    <script src="js/material.min.js"></script>
+    <script src="js/Vibrant.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="css/material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css"/>
+</head>
+<body>
+<div id="intro_container" class="mdl-card mdl-shadow--2dp" style="width: 512px;">
+    <div class="mdl-card__title"></div>
+    <div class="mdl-card__supporting-text">
+        Play music on your device. The controller will be available here.
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+           onclick="forceReload()">
+            START MUSIC / FORCE LOAD
+        </a>
+    </div>
+</div>
+<div id="container">
+    <img id="albumart" src="res/default_album_art.png" class="mdl-shadow--8dp"/>
+    <div id="info">
+        <h4 id="track" title="Track name"></h4>
+        <h6 id="album-artist" title="Album &#8226; Artist"></h6>
+    </div>
+    <div class="controls">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="previous()">
+            <i class="big-material-icons material-icons">skip_previous</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="setPlaying(false)">
+            <i class="big-material-icons material-icons" id="play_pause">pause</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick="next()">
+            <i class="big-material-icons material-icons">skip_next</i>
+        </button>
+    </div>
+    <div class="controls">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="volume_button_container"
+                onclick="un_mute()">
+            <i class="material-icons"></i>
+        </button>
+        <p id="volume_slider_container">
+            <input class="mdl-slider mdl-js-slider" type="range" min="0" max="15" value="0"
+                   tabindex="0" id="volume_slider">
+        </p>
+    </div>
+</div>
+<div class="mdl-shadow--3dp" id="options_menu">
+    <ul class="mdl-list" style="margin: unset">
+        <li class="mdl-list__item">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect"
+                    onclick="openUrl('https://www.youtube.com/results?search_query=' + track.text())">
+                <img src="./res/youtube.png" class="mdl-list__item-icon"> Search on YouTube
+            </button>
+        </li>
+        <li class="mdl-list__item">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect"
+                    onclick="openUrl('https://www.musixmatch.com/search/' + track.text())">
+                <img src="./res/lyrics.png" class="mdl-list__item-icon"> Search lyrics
+            </button>
+        </li>
+        <li class="mdl-list__item">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect"
+                    onclick="openUrl('https://github.com/dvdandroid/web-music-controller')">
+                <img src="./res/github.png" class="mdl-list__item-icon"> Star project on Github
+            </button>
+        </li>
+    </ul>
+</div>
+<div id="error_snackbar" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+</div>
+<div id="error_container" class="mdl-card mdl-shadow--2dp" style="width: 512px;">
+    <div class="mdl-card__title"></div>
+    <div class="mdl-card__supporting-text" id="error_message">
+        Javascript is disabled in your browser.<br>Turn it on to get this page working
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+           href="http://www.enable-javascript.com/" id="error_link">
+            ENABLE JAVASCRIPT
+        </a>
+    </div>
+</div>
+<script src="js/main.js"></script>
+<noscript>
+    <style>
+        #container {
+            display: none;
+        }
+
+        #error_container {
+            display: block;
+        }
+
+        body {
+            background-color: #f44336;
+        }
+
+
+
+    </style>
+</noscript>
+</body>
+</html>
