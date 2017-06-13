@@ -8,7 +8,7 @@ The app starts two server: the web server at port `9620`, which provides the fil
 
 # How to connect
 
-  - Browse to http://<device ip>:9620
+  - Browse to http://`device ip`:9620
   - Connect via cable
 
 # Cable connection
