@@ -1,4 +1,4 @@
-uif (!window.WebSocket) {
+if (!window.WebSocket) {
   $("#error_message").text("Your browser doesn't support WebSocket. Please update your browser");
   $("#error_link").attr("href", "https://browsehappy.com/").text("UPDATE YOUR BROWSER");
 
@@ -19,6 +19,7 @@ url = url.substr(0, url.indexOf(":"));
 var websocket = new WebSocket("ws://" + url + ":9621");
 websocket.onmessage = function (message) {
   var info = message.data.split(": ");
+  console.log(info)
   switch (info[0]) {
     case "ALBUM":
       artist.fadeTo(500, 0.50, function () {

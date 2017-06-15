@@ -28,6 +28,7 @@ import android.text.format.Formatter
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import com.dvd.android.webmusiccontroller.receivers.VolumeContentObserver
 import com.dvd.android.webmusiccontroller.servers.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         startAll(this, 9620, 9621)
         checkServers()
 
+        contentResolver.registerContentObserver(android.provider.Settings.System.CONTENT_URI, true, VolumeContentObserver(this))
         webserver_container.setOnClickListener {
             if (isWebServerRunning()) {
                 Snackbar.make(webserver_container, R.string.webserver_running, Snackbar.LENGTH_SHORT).show()
