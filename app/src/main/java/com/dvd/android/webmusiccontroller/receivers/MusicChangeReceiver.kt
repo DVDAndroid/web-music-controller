@@ -100,23 +100,23 @@ class MusicChangeReceiver : BroadcastReceiver() {
     }
 
     fun albumArtBase64(context: Context, album: String): String? {
-        var path: String? = null
         try {
             val cursorAlbum = context.contentResolver.query(MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI,
                     arrayOf(MediaStore.Audio.Albums.ALBUM_ART), "${MediaStore.Audio.Albums.ALBUM} = \"$album\"", null, null)
             cursorAlbum?.moveToFirst()
-            path = cursorAlbum.getString(0)
+            val path = cursorAlbum.getString(0)
             cursorAlbum.close()
+
+            if (path.isNullOrEmpty()) return "./res/default_album_art.png"
+
+            val bitmap = BitmapFactory.decodeFile(path)
+            val bao = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, bao)
+            val art = Base64.encodeToString(bao.toByteArray(), Base64.DEFAULT)
+            return "data:image/png;base64, $art"
         } catch (ignored: Throwable) {
+            return "./res/default_album_art.png"
         }
-
-        if (path.isNullOrEmpty()) return "./res/default_album_art.png"
-
-        val bitmap = BitmapFactory.decodeFile(path)
-        val bao = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, bao)
-        val art = Base64.encodeToString(bao.toByteArray(), Base64.DEFAULT)
-        return "data:image/png;base64, $art"
     }
 
 }
