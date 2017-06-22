@@ -50,7 +50,7 @@ body {
     height: 40%;
 }
 
-@media screen and (max-height: 638px) {
+@media screen and (max-height: 662px) {
     #albumart {
         width: 35%;
         height: 35%;
