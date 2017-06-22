@@ -129,6 +129,7 @@ $(document).ready(function () {
     var mute = ev.keyCode === 173;
     var volumeDown = ev.keyCode === 174;
     var volumeUp = ev.keyCode === 175;
+	var pause = ev.keyCode === 32;
 
     var isFirefox = typeof InstallTrigger !== 'undefined';
     if (isFirefox) {
@@ -142,6 +143,7 @@ $(document).ready(function () {
     if (mute) un_mute();
     if (volumeDown) setVolume(currVolume - 1);
     if (volumeUp) setVolume(currVolume + 1);
+	if (pause) setPlaying(false);
   });
 });
 
@@ -163,10 +165,8 @@ function setVolume(level) {
 
 function un_mute() {
   var isMuted = $("#volume_button_container").find("i").text() === "volume_off";
-  console.log(isMuted);
   var el = $("#volume_slider");
 
-  console.log(oldVolume);
   if (isMuted) {
     setVolume(oldVolume);
   } else {
